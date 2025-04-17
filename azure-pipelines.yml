@@ -10,5 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: BuildApp
-  - stage: DeployDev
+  - stage: BuildDev
+  - stage: BuildStaging
+  - stage: BuildProd
