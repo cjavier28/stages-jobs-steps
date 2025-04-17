@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- Release1
 
 pool:
   vmImage: ubuntu-latest
@@ -20,7 +20,7 @@ stages:
         displayName: React for Dev      
       - job: BuildNodeApp
         displayName: NodeJs for Dev   
-  - stage: BuildStaging
+  - stage: BuildQA
     displayName: build for Staging
     jobs:   
       - job: BuildMobileApp   
