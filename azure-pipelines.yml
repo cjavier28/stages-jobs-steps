@@ -9,7 +9,33 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-stages:
+
+stages:  
   - stage: BuildDev
+    displayName: build for Dev
+    jobs:   
+      - job: BuildMobileApp   
+        displayName: Mobiles for Dev   
+      - job: BuildReactApp  
+        displayName: React for Dev      
+      - job: BuildNodeApp
+        displayName: NodeJs for Dev   
   - stage: BuildStaging
+    displayName: build for Staging
+    jobs:   
+      - job: BuildMobileApp   
+        displayName: Mobiles for Staging      
+      - job: BuildReactApp  
+        displayName: React for Staging   
+      - job: BuildNodeApp
+        displayName: NodeJs for Staging
   - stage: BuildProd
+    displayName: build for Prod
+    jobs:   
+      - job: BuildMobileApp   
+        displayName: Mobiles for Prod
+      - job: BuildReactApp  
+        displayName: React for Prod   
+      - job: BuildNodeApp
+        displayName: NodeJs for Prod
+       
