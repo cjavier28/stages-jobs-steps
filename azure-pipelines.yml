@@ -1,3 +1,5 @@
+
+
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
@@ -14,13 +16,6 @@ stages:
   - stage: BuildDev
     displayName: build for Dev
     jobs:   
-      - job: BuildMobileApp   
-        displayName: Mobiles for Dev   
-        steps:
-          - script: echo build mobile aplication
-            displayName: Build mobile app 
-          - script:  echo running united test
-            displayName: Build mobile app 
       - job: BuildReactApp  
         displayName: React for Dev      
         steps:
@@ -28,10 +23,52 @@ stages:
             displayName: Build React app 
           - script:  echo running united test
             displayName: Build React app 
-      - job: BuildNodeApp
-        displayName: NodeJs for Dev
+  - stage: BuildQA
+    displayName: build for QA
+    jobs:   
+      - job: BuildMobileApp   
+        displayName: Mobiles for QA   
+        steps:
+          - script: echo build mobile aplication
+            displayName: Build mobile app 
+          - script:  echo running united test
+            displayName: Build mobile app 
+      - job: BuildReactApp  
+        displayName: React for QA      
         steps:
           - script: echo build React aplication
             displayName: Build React app 
           - script:  echo running united test
             displayName: Build React app 
+      - job: BuildNodeApp
+        displayName: NodeJs for QA
+        steps:
+          - script: echo build React aplication
+            displayName: Build React app 
+          - script:  echo running united test
+            displayName: Build React app 
+  - stage: BuildProd
+    displayName: build for Prod
+    jobs:   
+      - job: BuildMobileApp   
+        displayName: Mobiles for Prod   
+        steps:
+          - script: echo build mobile aplication
+            displayName: Build mobile app 
+          - script:  echo running united test
+            displayName: Build mobile app 
+      - job: BuildReactApp  
+        displayName: React for Prod      
+        steps:
+          - script: echo build React aplication
+            displayName: Build React app 
+          - script:  echo running united test
+            displayName: Build React app 
+      - job: BuildNodeApp
+        displayName: NodeJs for Prod
+        steps:
+          - script: echo build React aplication
+            displayName: Build React app 
+          - script:  echo running united test
+            displayName: Build React app
+       
