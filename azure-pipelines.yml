@@ -1,13 +1,7 @@
 pool: Default
 
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - Release1
-
 
 
 stages:  
@@ -27,7 +21,14 @@ stages:
           - script: echo build React aplication
             displayName: Build React app 
           - script:  echo running united test
-            displayName: Build React app     
+            displayName: Build React app 
+      - job: BuildNodeApp
+        displayName: NodeJs for Dev
+        steps:
+          - script: echo build React aplication
+            displayName: Build React app 
+          - script:  echo running united test
+            displayName: Build React app 
   - stage: BuildQA
     displayName: build for QA
     jobs:   
@@ -76,3 +77,4 @@ stages:
             displayName: Build React app 
           - script:  echo running united test
             displayName: Build React app
+       
