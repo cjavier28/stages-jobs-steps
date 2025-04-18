@@ -1,26 +1,10 @@
+pool: Default
 
+jobs:
+- job: build
+  steps:
+    - script: echo "🚧 Compilando..."
 
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- Release1
-
-pool:
-  vmImage: ubuntu-latest
-
-
-stages:  
-  - stage: BuildDev
-    displayName: build for Dev
-    jobs:   
-      - job: BuildReactApp  
-        displayName: React for Dev      
-        steps:
-          - script: echo build React aplication
-            displayName: Build React app 
-          - script:  echo running united test
-            displayName: Build React app 
-  
+- job: test
+  steps:
+    - script: echo "🧪 Ejecutando pruebas..."
