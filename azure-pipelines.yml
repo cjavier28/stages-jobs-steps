@@ -18,7 +18,7 @@ stages:
       - job: BuildReactApp  
         displayName: React for Dev
         dependsOn:
-        - BuildMobileApp
+        - BuildMobileApp      
         steps:                 
           - script: echo build React aplication
             displayName: Build React app 
@@ -35,6 +35,7 @@ stages:
     displayName: build for QA
     dependsOn: 
         - BuildDev 
+    condition: succeeded('BuildDev')
     jobs:   
       - job: BuildMobileApp   
         displayName: Mobiles for QA   
