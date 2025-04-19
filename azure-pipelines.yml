@@ -5,7 +5,7 @@ trigger:
 
 
 stages:  
-  - stage: BuildDev
+  - stage: BuildDev    
     displayName: build for Dev
     jobs:   
       - job: BuildMobileApp   
@@ -14,10 +14,10 @@ stages:
           - script: echo build mobile aplication
             displayName: Build mobile app 
           - script:  echo running united test
-            displayName: Build mobile app 
+            displayName: Build mobile app     
       - job: BuildReactApp  
         displayName: React for Dev      
-        steps:
+        steps:                 
           - script: echo build React aplication
             displayName: Build React app 
           - script:  echo running united test
@@ -31,6 +31,8 @@ stages:
             displayName: Build React app 
   - stage: BuildQA
     displayName: build for QA
+    dependsOn: 
+        - BuildDev 
     jobs:   
       - job: BuildMobileApp   
         displayName: Mobiles for QA   
