@@ -9,14 +9,16 @@ stages:
     displayName: build for Dev
     jobs:   
       - job: BuildMobileApp   
-        displayName: Mobiles for Dev   
+        displayName: Mobiles for Dev
         steps:
           - script: echo build mobile aplication
             displayName: Build mobile app 
           - script:  echo running united test
             displayName: Build mobile app     
       - job: BuildReactApp  
-        displayName: React for Dev      
+        displayName: React for Dev
+        dependsOn:
+        - BuildMobileApp
         steps:                 
           - script: echo build React aplication
             displayName: Build React app 
